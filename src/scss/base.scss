@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'EB Garamond';
+    font-style: normal;
+    font-weight: 400;
+    src: 
+        local('EB Garamond'),
+        url('../assets/fonts/EBGaramond/EBGaramond.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    font-family: "EB Garamond", 'Droid Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+.hero-left {
+    left: 9px;
+}
+.hero-right {
+    right: 7px;
+}
+
+.first-hero {
+    position: absolute;
+    top: 47px;
+}
+.second-hero {
+    position: absolute;
+    top: 139px;
+}
+.third-hero {
+    position: absolute;
+    top: 231px;
+}

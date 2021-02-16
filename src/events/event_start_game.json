@@ -1,0 +1,147 @@
+{
+    "type": "state",
+    "content": {
+      "game": {
+        "refresh_rate": 2000,
+        "is_in_game": true,
+        "game_time": 4550,
+        "players_count": 2,
+        "game_name": "w3c-20-P46-DMd1w-45867",
+        "map_name": "C:/Users/thegrymek/Documents/Warcraft III/Maps/W3Champions/v5/w3c_1v1_lastrefuge.anon.w3x"
+      },
+      "players": [
+        {
+          "name": "Player1",
+          "race_preference": "HUMAN",
+          "race": "HUMAN",
+          "id": 1,
+          "team_index": 0,
+          "team_color": 7,
+          "type": "PLAYER",
+          "handicap": 100,
+          "game_result": "IN_PROGRESS",
+          "slot_state": "PLAYING",
+          "ai_difficulty": "NORMAL",
+          "apm": 197,
+          "apm_realtime": 180,
+          "gold": 255,
+          "gold_mined": 10,
+          "gold_taxed": 0,
+          "gold_tax": 0,
+          "lumber": 100,
+          "lumber_harvested": 0,
+          "lumber_taxed": 0,
+          "lumber_tax": 0,
+          "food_max": 12,
+          "food": 6,
+          "heroes": [],
+          "buildings_on_map": [
+            {
+              "id": "htow",
+              "progress_percent": 100,
+              "upgrade_progress_percent": 0,
+              "art": "ReplaceableTextures\\CommandButtons\\BTNTownHall.blp"
+            }
+          ],
+          "upgrades_completed": [],
+          "units_on_map": [
+            {
+              "id": "hpea",
+              "owning_player_id": 0,
+              "alive_count": 5,
+              "total_count": 5,
+              "art": "ReplaceableTextures\\CommandButtons\\BTNPeasant.blp",
+              "is_worker": true,
+              "is_busy_worker": true,
+              "damage_dealt": 0,
+              "damage_received": 0,
+              "damage_healed": 0
+            }
+          ],
+          "researches_in_progress": [
+            {
+              "id": "hpea",
+              "progress_percent": 20,
+              "type": "UNIT",
+              "art": "ReplaceableTextures\\CommandButtons\\BTNPeasant.blp"
+            }
+          ]
+        },
+        {
+          "name": "Player2",
+          "race_preference": "UNDEAD",
+          "race": "UNDEAD",
+          "id": 2,
+          "team_index": 1,
+          "team_color": 1,
+          "type": "PLAYER",
+          "handicap": 100,
+          "game_result": "IN_PROGRESS",
+          "slot_state": "PLAYING",
+          "ai_difficulty": "NORMAL",
+          "apm": 145,
+          "apm_realtime": 220,
+          "gold": 360,
+          "gold_mined": 10,
+          "gold_taxed": 0,
+          "gold_tax": 0,
+          "lumber": 150,
+          "lumber_harvested": 0,
+          "lumber_taxed": 0,
+          "lumber_tax": 0,
+          "food_max": 10,
+          "food": 6,
+          "heroes": [],
+          "buildings_on_map": [
+            {
+              "id": "ugol",
+              "progress_percent": 100,
+              "upgrade_progress_percent": 0,
+              "art": "ReplaceableTextures\\CommandButtons\\BTNGoldMine.blp"
+            },
+            {
+              "id": "unpl",
+              "progress_percent": 100,
+              "upgrade_progress_percent": 0,
+              "art": "ReplaceableTextures\\CommandButtons\\BTNNecropolis.blp"
+            }
+          ],
+          "upgrades_completed": [],
+          "units_on_map": [
+            {
+              "id": "ugho",
+              "owning_player_id": 1,
+              "alive_count": 1,
+              "total_count": 1,
+              "art": "ReplaceableTextures\\CommandButtons\\BTNGhoul.blp",
+              "is_worker": false,
+              "is_busy_worker": false,
+              "damage_dealt": 0,
+              "damage_received": 0,
+              "damage_healed": 0
+            },
+            {
+              "id": "uaco",
+              "owning_player_id": 1,
+              "alive_count": 3,
+              "total_count": 3,
+              "art": "ReplaceableTextures\\CommandButtons\\BTNAcolyte.blp",
+              "is_worker": true,
+              "is_busy_worker": true,
+              "damage_dealt": 0,
+              "damage_received": 0,
+              "damage_healed": 0
+            }
+          ],
+          "researches_in_progress": [
+            {
+              "id": "uaco",
+              "progress_percent": 18,
+              "type": "UNIT",
+              "art": "ReplaceableTextures\\CommandButtons\\BTNAcolyte.blp"
+            }
+          ]
+        }
+      ]
+    }
+  }
