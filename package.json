@@ -18,10 +18,10 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "build:tailwind": "postcss src/scss/base.scss -o src/scss/tailwind.scss",
     "start": "cross-env NODE_PATH=src npm-run-all build:tailwind start:react",
     "start:react": "react-scripts start",
     "prebuild": "run-s build:tailwind",
+    "build:tailwind": "postcss src/scss/base.scss -o src/scss/tailwind.scss",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
