@@ -1,10 +1,6 @@
 import React from 'react';
-import {
-  PLAYER_BORDER_COLOR,
-  PLAYER_GRADIENTS,
-  RESOURCE_TEXT_COLOR,
-} from '../../../config';
 import {W3PlayerProps, W3UpgradeProps} from '../../../w3/interfaces';
+import {colors} from '../../Theme';
 import {
   getCasterUpgrades,
   getMelleUpgrades,
@@ -16,12 +12,12 @@ import Resource from '../../molecules/Resource';
 
 function mapFoodColor(food: number) {
   if (food < 51) {
-    return RESOURCE_TEXT_COLOR['food'];
+    return colors.resources.textColor['food'];
   }
   if (food < 81) {
-    return RESOURCE_TEXT_COLOR['foodSmallTax'];
+    return colors.resources.textColor['foodSmallTax'];
   }
-  return RESOURCE_TEXT_COLOR['foodBigTax'];
+  return colors.resources.textColor['foodBigTax'];
 }
 
 export interface NavbarResourceConfigProps {
@@ -70,8 +66,8 @@ export default class NavbarResources extends React.Component<
       'p-0 m-0',
       'text-white font-bold',
       'border-b-4',
-      PLAYER_BORDER_COLOR[this.props.color],
-      PLAYER_GRADIENTS[this.props.color],
+      colors.player.border[this.props.color],
+      colors.player.gradient[this.props.color],
     ];
     if (this.props.reverse === true) {
       navbarClassNames.push('flex-row-reverse');
@@ -126,8 +122,8 @@ export default class NavbarResources extends React.Component<
       'p-0 m-0',
       'text-white font-bold',
       'border-b-4',
-      PLAYER_BORDER_COLOR[this.props.color],
-      PLAYER_GRADIENTS[this.props.color],
+      colors.player.border[this.props.color],
+      colors.player.gradient[this.props.color],
     ];
     if (this.props.reverse === true) {
       navbarClassNames.push('flex-row-reverse');

@@ -2,6 +2,9 @@ import HeroLayout from './organisms/HeroLayout';
 import NavbarResources from './organisms/NavbarResources';
 import NavbarUnitsUpgrades from './organisms/NavbarUnitsUpgrades';
 import {W3HeroProps, W3PlayerProps} from '../w3/interfaces';
+import {W3UnitProps, W3UpgradeProps} from '../w3/interfaces';
+import Unit from './molecules/Unit';
+import Upgrade from './molecules/Upgrade';
 import {
   countTotalUnits,
   countTotalWorkers,
@@ -75,6 +78,29 @@ export function renderNavbarUnitsUpgrades(
       showRestUpgrades={true}
       showUnits={true}
       reverse={reverse}
+    />
+  );
+}
+
+export function renderUpgrade(upgrade: W3UpgradeProps) {
+  return (
+    <Upgrade
+      key={upgrade.id}
+      class={upgrade.class}
+      id={upgrade.id}
+      level={upgrade.level}
+      levelMax={upgrade.levelMax}
+    />
+  );
+}
+
+export function renderUnit(unit: W3UnitProps) {
+  return (
+    <Unit
+      key={unit.id}
+      id={unit.id}
+      alive_count={unit.alive_count}
+      total_count={unit.total_count}
     />
   );
 }

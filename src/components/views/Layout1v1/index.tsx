@@ -9,6 +9,7 @@ import {
   renderNavbarResources,
   renderHero,
 } from '../../renderers';
+
 const HeroIdxToClass = {
   0: 'first-hero',
   1: 'second-hero',

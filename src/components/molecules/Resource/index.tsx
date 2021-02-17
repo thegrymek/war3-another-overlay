@@ -1,5 +1,5 @@
 import React from 'react';
-import {RESOURCE_GRADIENTS, RESOURCE_TEXT_COLOR} from '../../../config';
+import {colors} from '../../Theme';
 
 export interface ResourceProps {
   resourceType: string;
@@ -8,11 +8,11 @@ export default class Resource extends React.Component<ResourceProps> {
   render() {
     const rowClassNames = [
       'grid grid-rows-2 px-2 bg-gradient-to-t',
-      RESOURCE_GRADIENTS[this.props.resourceType],
+      colors.resources.gradient[this.props.resourceType],
     ];
     const valueClassNames = [
       'align-middle',
-      RESOURCE_TEXT_COLOR[this.props.resourceType],
+      colors.resources.textColor[this.props.resourceType],
     ];
     return (
       <div className={rowClassNames.join(' ')}>

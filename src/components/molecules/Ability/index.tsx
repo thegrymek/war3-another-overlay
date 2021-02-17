@@ -5,7 +5,7 @@ import tw from 'twin.macro';
 import IconWrapper from '../../atoms/IconWrapper';
 import Text from '../../atoms/Text';
 import {W3AbilityProps} from '../../../w3/interfaces';
-import {PLAYER_GRADIENTS, PLAYER_BORDER_COLOR} from '../../../config';
+import {colors} from '../../Theme';
 
 const FixedDiv = styled.div`
   ${props =>
@@ -73,8 +73,8 @@ export default class Ability extends React.Component<AbilityProps> {
     const classNames = [
       'bg-gradient-to-tr',
       'border-opacity-50',
-      PLAYER_BORDER_COLOR[this.levelBarColor],
-      PLAYER_GRADIENTS[this.levelBarColor],
+      colors.player.border[this.levelBarColor],
+      colors.player.gradient[this.levelBarColor],
     ];
     return <LevelBar className={classNames.join(' ')} />;
   }
