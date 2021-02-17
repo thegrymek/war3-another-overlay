@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import tw from 'tailwind.macro';
+import tw from 'twin.macro';
 
 import IconWrapper from '../../atoms/IconWrapper';
 import Text from '../../atoms/Text';

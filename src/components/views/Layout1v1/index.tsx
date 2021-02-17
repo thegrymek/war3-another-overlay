@@ -2,15 +2,13 @@ import React from 'react';
 import {W3HeroProps, W3PlayerProps} from '../../../w3/interfaces';
 import {uuid} from 'uuidv4';
 
+import {BaseLayout, HeroesLayout} from '../../BaseLayout';
+import SideLayout from '../../atoms/SideLayout';
 import {
-  BaseLayout,
-  SideLayout,
-  HeroesLayout,
   renderNavbarUnitsUpgrades,
   renderNavbarResources,
   renderHero,
-} from '../../BaseLayout';
-
+} from '../../renderers';
 const HeroIdxToClass = {
   0: 'first-hero',
   1: 'second-hero',

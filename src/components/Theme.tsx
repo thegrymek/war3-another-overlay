@@ -104,7 +104,7 @@ const resolution1920x1080 = {
     },
   },
   navbar: {
-    width: '900px',
+    width: 900,
     height: '40px',
   },
   shield: {
