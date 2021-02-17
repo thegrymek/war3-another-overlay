@@ -8,8 +8,9 @@ Usage of this tool is limited to watching replays and spactate games. It's limit
 # Roadmap
 
 0.1 - We are still not here
-- [ ] cleanup todo lines
-- [ ] remove config file and use theme everywhere
+- [ ] setup ci and add one task: lint
+- [x] cleanup todo lines
+- [x] remove config file and use theme everywhere
 - [ ] move fonts to public
 - [x] add changelog
 - [ ] release build
