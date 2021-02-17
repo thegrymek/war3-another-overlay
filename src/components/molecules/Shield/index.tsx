@@ -11,7 +11,7 @@ interface ShieldProps {
 }
 export default class Shield extends React.Component<ShieldProps> {
   get src() {
-    return `/assets/shields/${this.props.race}.png`;
+    return `assets/shields/${this.props.race}.png`;
   }
 
   get key() {
@@ -22,9 +22,3 @@ export default class Shield extends React.Component<ShieldProps> {
     return <StyledShield src={this.src} key={this.key} />;
   }
 }
-
-// https://github.com/diegohaz/arc/blob/master/src-example/components/atoms/Link/index.js
-// https://stackoverflow.com/questions/42796584/dynamic-theme-in-styled-components
-// https://storybook.js.org/addons/storybook-addon-styled-component-theme
-//
-//

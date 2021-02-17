@@ -10,7 +10,7 @@ export interface IconWrapperProps {
 }
 export default styled.div<IconWrapperProps>`
   ${tw`relative bg-no-repeat`}
-  background-image: url(${props => `/assets/icons/${props.id}.jpg`});
+  background-image: url(${props => `assets/icons/${props.id}.jpg`});
   background-position: center;
   ${props => props.width && `width: ${props.width}px;`}
   ${props => props.height && `height: ${props.height}px;`}

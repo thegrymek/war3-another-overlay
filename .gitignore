@@ -22,6 +22,5 @@ yarn-debug.log*
 yarn-error.log*
 
 /.vscode
-/src/scss/tailwind.scss
 /public/assets/icons
 /public/assets/icons_hd

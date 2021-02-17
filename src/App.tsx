@@ -1,5 +1,4 @@
 import React from 'react';
-import './scss/tailwind.scss';
 import {Layout1v1, Layout1v1Replay} from './components/views/Layout1v1';
 import {W3Event, W3PlayerProps} from './w3/interfaces';
 import {theme} from './components/Theme';
