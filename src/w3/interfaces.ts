@@ -41,6 +41,7 @@ export interface W3HeroProps {
   experienceMax: number;
 }
 export interface W3PlayerProps {
+  id: number;
   color: string;
   playerName: string;
   race: string;

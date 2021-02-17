@@ -1,7 +1,7 @@
 import {Story, Meta} from '@storybook/react/types-6-0';
 import NavbarUnitsUpgrades, {NavBarUnitsUpgradesProps} from '.';
 import {elfUnits, elfUpgrades} from '../../fixtures';
-import {PLAYER_GRADIENTS} from '../../../config';
+import {colors} from '../../Theme';
 
 export default {
   title: 'Organisms / Navbar Units Upgrades',
@@ -16,7 +16,7 @@ export default {
     color: {
       control: {
         type: 'select',
-        options: Object.keys(PLAYER_GRADIENTS),
+        options: Object.keys(colors.player.gradient),
       },
     },
   },

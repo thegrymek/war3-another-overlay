@@ -3,22 +3,12 @@ import {
   W3UnitProps,
   W3ItemProps,
   W3AbilityProps,
+  W3PlayerProps,
 } from './interfaces';
-
-const HERO_SIMPLE_ABILITIES = [
-  'AHer',
-  'ANpr',
-  'ANsa',
-  'ANss',
-  'ANse',
-  'ANbs',
-  'AUds',
-  'AEtr',
-  'AEsd',
-];
+import * as constans from './constans';
 
 export function filterOutAbilities(ability: W3AbilityProps): boolean {
-  if (HERO_SIMPLE_ABILITIES.includes(ability.id)) return false;
+  if (constans.HERO_SIMPLE_ABILITIES.includes(ability.id)) return false;
   if (!ability.id.match(/^A[HOEUN]/)) return false;
   return true;
 }
@@ -65,35 +55,6 @@ export function countTotalWorkers(unitsOnMap: W3UnitProps[]): number {
     .reduce((accumulator: number, value: number) => accumulator + value, 0);
 }
 
-export const TEAM_INDEX_COLORS = [
-  'red',
-  'blue',
-  'teal',
-  'purple',
-  'yellow',
-  'orange',
-  'green',
-  'pink',
-  'gray',
-  'light-blue',
-  'dark-green',
-  'brown',
-  'maroon',
-  'navy',
-  'turquoise',
-  'violet',
-  'wheat',
-  'peach',
-  'mint',
-  'lavender',
-  'coal',
-  'snow',
-  'emerald',
-  'peanut',
-];
-
-export const ITEM_EMPTY_ICON = 'emptySlot';
-
 /**
  * Numbered map.
  * TODO: move it elsewhere
@@ -117,7 +78,7 @@ export interface INumberedDictType<T> {
 export const INVENTORY_SLOTS = [0, 1, 2, 3, 4, 5];
 
 export const EmptyItem: W3ItemProps = {
-  id: ITEM_EMPTY_ICON,
+  id: constans.ITEM_EMPTY_ICON,
   slot: -1,
 };
 
@@ -167,5 +128,16 @@ export function createEmptyInventory(): INumberedDictType<W3ItemProps> {
   return INVENTORY_SLOTS.reduce(
     (_items, slot: number) => ({..._items, [slot]: {...EmptyItem}}),
     {}
+  );
+}
+
+export function checkPlayers(players?: W3PlayerProps[]): boolean {
+  return !players || players.length === 0;
+}
+
+export function sortPlayers(players: W3PlayerProps[]): W3PlayerProps[] {
+  return players.sort(
+    (player1: W3PlayerProps, player2: W3PlayerProps) =>
+      player1['id'] - player2['id']
   );
 }

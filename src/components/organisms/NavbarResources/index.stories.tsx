@@ -6,7 +6,7 @@ import {
   elfMeleeUpgrades,
   elfCastersUpgrades,
 } from '../../fixtures';
-import {PLAYER_GRADIENTS} from '../../../config';
+import {colors} from '../../Theme';
 
 export default {
   title: 'Organisms / Navbar Resources',
@@ -32,7 +32,7 @@ export default {
     color: {
       control: {
         type: 'select',
-        options: Object.keys(PLAYER_GRADIENTS),
+        options: Object.keys(colors.player.gradient),
       },
     },
   },

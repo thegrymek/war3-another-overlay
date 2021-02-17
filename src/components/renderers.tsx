@@ -5,11 +5,8 @@ import {W3HeroProps, W3PlayerProps} from '../w3/interfaces';
 import {W3UnitProps, W3UpgradeProps} from '../w3/interfaces';
 import Unit from './molecules/Unit';
 import Upgrade from './molecules/Upgrade';
-import {
-  countTotalUnits,
-  countTotalWorkers,
-  TEAM_INDEX_COLORS,
-} from '../w3/tools';
+import {countTotalUnits, countTotalWorkers} from '../w3/tools';
+import {TEAM_INDEX_COLORS} from '../w3/constans';
 
 export function renderHero(hero: W3HeroProps, reverse?: boolean) {
   return (
