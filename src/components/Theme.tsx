@@ -105,7 +105,7 @@ const resolution1920x1080 = {
   },
   navbar: {
     width: 900,
-    height: '40px',
+    height: 40,
   },
   shield: {
     size: '28px',
