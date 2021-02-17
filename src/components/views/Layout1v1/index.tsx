@@ -2,8 +2,8 @@ import React from 'react';
 import {W3HeroProps, W3PlayerProps} from '../../../w3/interfaces';
 import {uuid} from 'uuidv4';
 
-import {BaseLayout, HeroesLayout} from '../../BaseLayout';
 import SideLayout from '../../atoms/SideLayout';
+import AbsoluteDiv from '../../atoms/AbsoluteDiv';
 import {
   renderNavbarUnitsUpgrades,
   renderNavbarResources,
@@ -23,23 +23,25 @@ export class Layout1v1 extends React.Component<Layout1v1Props> {
     const player = this.props.player;
 
     return (
-      <BaseLayout>
-        <SideLayout isLeft={true}></SideLayout>
-        <div className="w-1/12" />
-        <SideLayout isLeft={false}>
-          {renderNavbarResources(player)}
-          {renderNavbarUnitsUpgrades(player, false)}
-        </SideLayout>
-
-        <HeroesLayout>
+      <AbsoluteDiv zindex={0}>
+        <div className="w-full flex flex-nowrap">
+          <SideLayout isLeft={true}></SideLayout>
+          <div className="w-1/12" />
+          <SideLayout isLeft={false}>
+            {renderNavbarResources(player)}
+            {renderNavbarUnitsUpgrades(player, false)}
+          </SideLayout>
+        </div>
+        {/* Heroes on left */}
+        <AbsoluteDiv zindex={10}>
           {player.heroes &&
             player.heroes.map((hero: W3HeroProps) => (
               <div className={HeroIdxToClass[hero['index']] + ' hero-left'}>
                 {renderHero(hero)}
               </div>
             ))}
-        </HeroesLayout>
-      </BaseLayout>
+        </AbsoluteDiv>
+      </AbsoluteDiv>
     );
   }
 }
@@ -65,28 +67,34 @@ export class Layout1v1Replay extends React.Component<Layout1v1ReplayProps> {
     const player2 = this.props.players[1];
 
     return (
-      <BaseLayout>
-        <SideLayout isLeft={true}>
-          {renderNavbarResources(player1, true)}
-        </SideLayout>
-        <div className="w-1/12" />
-        <SideLayout isLeft={false}>{renderNavbarResources(player2)}</SideLayout>
-
-        <HeroesLayout>
+      <AbsoluteDiv zindex={0}>
+        <div className="w-full flex flex-nowrap">
+          <SideLayout isLeft={true}>
+            {renderNavbarResources(player1, true)}
+          </SideLayout>
+          <div className="w-1/12" />
+          <SideLayout isLeft={false}>
+            {renderNavbarResources(player2)}
+          </SideLayout>
+        </div>
+        {/* Heroes on left */}
+        <AbsoluteDiv zindex={10}>
           {player1.heroes &&
             player1.heroes
               .slice()
               .reverse()
               .map((hero, idx) => this.renderHero(hero, idx, false))}
-        </HeroesLayout>
-        <HeroesLayout>
+        </AbsoluteDiv>
+
+        {/* Heroes on right */}
+        <AbsoluteDiv zindex={10}>
           {player2.heroes &&
             player2.heroes
               .slice()
               .reverse()
               .map((hero, idx) => this.renderHero(hero, idx, true))}
-        </HeroesLayout>
-      </BaseLayout>
+        </AbsoluteDiv>
+      </AbsoluteDiv>
     );
   }
 }
