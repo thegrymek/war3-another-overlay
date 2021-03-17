@@ -24,3 +24,4 @@ yarn-error.log*
 /.vscode
 /public/assets/icons
 /public/assets/icons_hd
+/src/scss/tailwind.scss
