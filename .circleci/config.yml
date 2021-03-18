@@ -4,18 +4,26 @@ orbs:
 
 
 defaults: &defaults
-  working_directory: ~/project/app
+  working_directory: ~/project/war3-another-overlay
   docker:
     - image: node:lts-stretch-slim
 
 
 jobs:
+  install:
+    <<: *defaults
+    steps:
+      - run: npm install
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - war3-another-overlay
   lint:
     <<: *defaults
     steps:
       - run: npm run lint
 
 workflows:
-  node-tests:
+  setup:
     jobs:
       - lint
