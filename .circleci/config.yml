@@ -1,0 +1,21 @@
+version: 2.1
+orbs:
+  node: circleci/node@3.0.0
+
+
+defaults: &defaults
+  working_directory: ~/project/app
+  docker:
+    - image: node:lts-stretch-slim
+
+
+jobs:
+  lint:
+    <<: *defaults
+    steps:
+      - run: npm run lint
+
+workflows:
+  node-tests:
+    jobs:
+      - lint
