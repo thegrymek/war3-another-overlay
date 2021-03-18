@@ -132,7 +132,7 @@ export function createEmptyInventory(): INumberedDictType<W3ItemProps> {
 }
 
 export function checkPlayers(players?: W3PlayerProps[]): boolean {
-  return !players || players.length === 0;
+  return !(!players || players.length === 0);
 }
 
 export function sortPlayers(players: W3PlayerProps[]): W3PlayerProps[] {

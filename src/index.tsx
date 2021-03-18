@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+/* eslint-disable */
 import './scss/tailwind.scss';
+/* eslint-enable */
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
