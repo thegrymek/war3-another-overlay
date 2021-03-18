@@ -11,12 +11,12 @@ Usage of this tool is limited to watching replays and spactate games. It's limit
 # Roadmap
 
 0.1 - We are still not here
-- [ ] setup ci and add one task: lint
+- [x] setup ci and add one task: lint
 - [x] cleanup todo lines
 - [x] remove config file and use theme everywhere
-- [ ] move fonts to public
+- [x] move fonts to public
 - [x] add changelog
-- [ ] release build
+- [x] release build
 
 0.2
 - [ ] show current units in navbar
@@ -24,6 +24,8 @@ Usage of this tool is limited to watching replays and spactate games. It's limit
 - [ ] add black blur on colddown text
 - [ ] increase healthbar, manabar, expbar height. Use black background instead of white. Try to add text in bars with current / max information.
 - [ ] if hero hasnt picked ability, show plus icon
+- [ ] add license badge
+- [ ] add version badge
 
 0.3
 - [ ] add animation if new element appears or disapears
