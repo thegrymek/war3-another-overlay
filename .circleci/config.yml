@@ -10,9 +10,11 @@ defaults: &defaults
 
 
 jobs:
-  install:
+  build:
     <<: *defaults
     steps:
+      - run: echo pwd
+      - run: ls
       - run: npm install
       - persist_to_workspace:
           root: ~/project
@@ -26,4 +28,5 @@ jobs:
 workflows:
   setup:
     jobs:
+      - build
       - lint
