@@ -1,5 +1,8 @@
 # Summary
 
+[![CircleCI](https://circleci.com/gh/thegrymek/war3-another-overlay.svg?style=shield)](https://app.circleci.com/pipelines/github/thegrymek/war3-another-overlay)
+
+
 `warcraft3-another-overlay` is another warcraft 3 overlay to use in tools like obs. Overlay depends on [war3observer](https://github.com/sides/war3observer) that gathers data from game using observer API.
 
 Usage of this tool is limited to watching replays and spactate games. It's limitation of Warcraft3 Observer API rather than this overlay.
@@ -42,7 +45,7 @@ Dependencies:
 After download `war3observer` unzip and copy warcraft3 icons to 
 
 ```bash
-war3-another-overlay/public/asserts/icons
+war3-another-overlay/public/assets/icons
 ```
 
 Installation
