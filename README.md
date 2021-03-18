@@ -10,7 +10,7 @@ Usage of this tool is limited to watching replays and spactate games. It's limit
 
 # Roadmap
 
-0.1 - We are still not here
+*0.1 - We are here*
 - [x] setup ci and add one task: lint
 - [x] cleanup todo lines
 - [x] remove config file and use theme everywhere
