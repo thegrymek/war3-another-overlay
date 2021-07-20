@@ -100,7 +100,7 @@ const resolution1920x1080 = {
     iconSize: 68,
     levelFontSize: 15,
     progressBar: {
-      height: 3,
+      height: 4,
     },
   },
   navbar: {

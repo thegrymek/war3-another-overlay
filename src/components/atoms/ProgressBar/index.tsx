@@ -11,27 +11,31 @@ const StyledBaseProgressBar = styled.div.attrs<StyledBaseProgressBarProps>(
     height: props.height || props.theme.hero.progressBar.height,
   })
 )`
-  ${tw`overflow-hidden text-xs flex`}
-  ${props => props.color === 'red' && tw`bg-red-200`}
-  ${props => props.color === 'blue' && tw`bg-blue-200`}
-  ${props => props.color === 'purple' && tw`bg-purple-200`}
+  ${tw`bg-black`}
+  ${tw`overflow-hidden text-xs flex`};
   height: ${props => props.height}px;
 `;
 
 interface StyledLineProgressBarProps extends StyledBaseProgressBarProps {
-  strPercent: string;
+  strPercent: number;
   height?: number;
+  hslaColor?: number;
 }
 const StyledLineProgressBar = styled.div.attrs<StyledLineProgressBarProps>(
   props => ({
     height: props.height || props.theme.hero.progressBar.height,
   })
 )`
-  ${tw`flex flex-col text-center text-white justify-center`}
-  ${props => props.color === 'red' && tw`bg-red-500`}
-  ${props => props.color === 'blue' && tw`bg-blue-500`}
-  ${props => props.color === 'purple' && tw`bg-purple-500`}
-  width: ${props => props.strPercent};
+  ${tw`flex flex-col justify-center`}
+  ${props =>
+    props.color === 'red' &&
+    `background: linear-gradient(0deg, hsla(${props.hslaColor},100%,30%), hsla(${props.hslaColor},100%,50%));`}
+  ${props =>
+    props.color === 'blue' && tw`bg-gradient-to-t from-blue-600 to-blue-400`}
+  ${props =>
+    props.color === 'purple' &&
+    tw`bg-gradient-to-t from-purple-600 to-purple-400`}
+  width: ${props => props.strPercent}%;
   height: ${props => props.height}px;
 `;
 
@@ -42,8 +46,12 @@ export interface ProgressBarProps {
 }
 
 export class StyledProgressBar extends React.Component<ProgressBarProps> {
-  get valuePercent(): string {
-    return (this.props.value * 100).toString() + '%';
+  get valuePercent(): number {
+    return this.props.value * 100;
+  }
+
+  get healthHslaColor(): number {
+    return this.valuePercent * 1.4;
   }
 
   render() {
@@ -57,6 +65,7 @@ export class StyledProgressBar extends React.Component<ProgressBarProps> {
             color={this.props.color}
             strPercent={this.valuePercent}
             height={this.props.height}
+            hslaColor={this.healthHslaColor}
           ></StyledLineProgressBar>
         </StyledBaseProgressBar>
       </div>

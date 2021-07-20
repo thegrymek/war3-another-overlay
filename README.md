@@ -22,7 +22,7 @@ Usage of this tool is limited to watching replays and spactate games. It's limit
 - [ ] show current units in navbar
 - [ ] show upgrades in navbar. Group upgrades by ranged, melle, casters. 
 - [x] add black blur on colddown text
-- [ ] increase healthbar, manabar, expbar height. Use black background instead of white. Try to add text in bars with current / max information.
+- [x] increase healthbar, manabar, expbar height. Use black background instead of white. Try to add text in bars with current / max information.
 - [ ] if hero hasnt picked ability, show plus icon
 - [ ] add license badge
 - [ ] add version badge

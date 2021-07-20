@@ -30,5 +30,5 @@ export const SimpleProgressBar = Template.bind({});
 SimpleProgressBar.args = {
   value: 0.3,
   color: 'red',
-  height: 5,
+  height: 45,
 };
