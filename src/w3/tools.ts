@@ -141,3 +141,7 @@ export function sortPlayers(players: W3PlayerProps[]): W3PlayerProps[] {
       player1['id'] - player2['id']
   );
 }
+
+export function isPlayerPlaying(player: W3PlayerProps): boolean {
+  return player['slot_state'] === 'PLAYING';
+}

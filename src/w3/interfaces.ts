@@ -44,6 +44,7 @@ export interface W3PlayerProps {
   id: number;
   color: string;
   playerName: string;
+  slot_state?: string;
   race: string;
   gold: number;
   lumber: number;

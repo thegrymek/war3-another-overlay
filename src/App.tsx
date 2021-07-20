@@ -1,7 +1,7 @@
 import React from 'react';
 import {Layout1v1, Layout1v1Replay} from './components/views/Layout1v1';
 import {W3Event, W3PlayerProps} from './w3/interfaces';
-import {sortPlayers, checkPlayers} from './w3/tools';
+import {sortPlayers, checkPlayers, isPlayerPlaying} from './w3/tools';
 import {theme} from './components/Theme';
 import {ThemeProvider} from 'styled-components';
 
@@ -48,9 +48,7 @@ export class App extends React.Component<{}, AppState> {
     if (!this.state.content) return <div />;
 
     const content = this.state.content;
-    const players: W3PlayerProps[] = content.players.filter(
-      (player: W3PlayerProps) => player['slot_state'] === 'PLAYING'
-    );
+    const players: W3PlayerProps[] = content.players.filter(isPlayerPlaying);
 
     if (!checkPlayers(players)) return <div />;
 
