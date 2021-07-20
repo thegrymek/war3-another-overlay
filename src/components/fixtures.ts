@@ -5,6 +5,13 @@ import {
   W3ItemProps,
 } from '../w3/interfaces';
 
+import * as event_start from '../events/event_start_game.json';
+import * as event_mid from '../events/event_mid_game.json';
+import * as event_late from '../events/event_late_game.json';
+import * as event from '../events/event.json';
+
+export {event, event_start, event_mid, event_late};
+
 const item1: W3ItemProps = {id: 'gcel', slot: 0, cooldown: 0, charges: 0};
 const item2: W3ItemProps = {id: 'cnob', slot: 1, cooldown: 0, charges: 0};
 const item3: W3ItemProps = {id: 'afac', slot: 2, cooldown: 0, charges: 0};
