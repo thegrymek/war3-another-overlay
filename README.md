@@ -50,7 +50,7 @@ After download `war3observer` unzip and copy warcraft3 icons to
 war3-another-overlay/public/assets/icons
 ```
 
-Installation
+## Installation
 
 ```bash
 $ npm install
@@ -76,6 +76,26 @@ $ npm run storybook
 it should open new tab in your browser. There you can test components
 separately using some fake data.
 
+
+## Development
+
+In order to run linters:
+
+```
+$ npm run lint
+```
+
+In order to run automatic fix lint:
+
+```
+$ npm run fix
+```
+
+If you have missing `tailwind.css` file run:
+
+```
+$ npm run build
+```
 
 # Contribute
 
