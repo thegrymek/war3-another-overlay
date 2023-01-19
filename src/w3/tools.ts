@@ -5,10 +5,11 @@ import {
   W3AbilityProps,
   W3PlayerProps,
 } from './interfaces';
-import * as constans from './constans';
+import { HERO_SIMPLE_ABILITIES, ITEM_EMPTY_ICON } from './constants';
+import { INumberedDictType } from './types'
 
-export function filterOutAbilities(ability: W3AbilityProps): boolean {
-  if (constans.HERO_SIMPLE_ABILITIES.includes(ability.id)) return false;
+export function dropHeroSimpleAbilities(ability: W3AbilityProps): boolean {
+  if (HERO_SIMPLE_ABILITIES.includes(ability.id)) return false;
   if (!ability.id.match(/^A[HOEUN]/)) return false;
   return true;
 }
@@ -55,20 +56,6 @@ export function countTotalWorkers(unitsOnMap: W3UnitProps[]): number {
     .reduce((accumulator: number, value: number) => accumulator + value, 0);
 }
 
-/**
- * Numbered map.
- * TODO: move it elsewhere
- * Example:
- *   > {
- *     1: T,
- *     2: T,
- *     ...
- *     5: T,
- *   }
- */
-export interface INumberedDictType<T> {
-  [details: number]: T;
-}
 
 /** Slots numbering from w3.
  *
@@ -78,7 +65,7 @@ export interface INumberedDictType<T> {
 export const INVENTORY_SLOTS = [0, 1, 2, 3, 4, 5];
 
 export const EmptyItem: W3ItemProps = {
-  id: constans.ITEM_EMPTY_ICON,
+  id: ITEM_EMPTY_ICON,
   slot: -1,
 };
 
@@ -125,14 +112,20 @@ export function groupInventory(
  *   }
  */
 export function createEmptyInventory(): INumberedDictType<W3ItemProps> {
-  return INVENTORY_SLOTS.reduce(
-    (_items, slot: number) => ({..._items, [slot]: {...EmptyItem}}),
-    {}
-  );
+  return {
+    0: EmptyItem,
+    1: EmptyItem,
+    2: EmptyItem,
+    3: EmptyItem,
+    4: EmptyItem,
+    5: EmptyItem,
+  };
 }
 
 export function checkPlayers(players?: W3PlayerProps[]): boolean {
-  return !(!players || players.length === 0);
+  if (!players) return false;
+  if (players.length === 0) return false;
+  return true;
 }
 
 export function sortPlayers(players: W3PlayerProps[]): W3PlayerProps[] {

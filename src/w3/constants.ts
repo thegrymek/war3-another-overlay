@@ -1,3 +1,6 @@
+// 
+// List of abilities like: attack, stop, move, hold position
+// 
 export const HERO_SIMPLE_ABILITIES = [
   'AHer',
   'ANpr',
@@ -10,6 +13,11 @@ export const HERO_SIMPLE_ABILITIES = [
   'AEsd',
 ];
 
+// 
+// List of colors by index.
+// Upon decoding color we receive number that why we need hardcode
+// colors by index.
+// 
 export const TEAM_INDEX_COLORS = [
   'red',
   'blue',

@@ -1,6 +1,6 @@
 import React from 'react';
 import {W3HeroProps} from '../../../w3/interfaces';
-import {filterOutAbilities} from '../../../w3/tools';
+import {dropHeroSimpleAbilities} from '../../../w3/tools';
 import Hero from '../../molecules/Hero';
 import Abilities from '../../molecules/Abilities';
 import Inventory from '../../molecules/Inventory';
@@ -16,7 +16,7 @@ export default class HeroLayout extends React.Component<HeroLayoutProps> {
 
   render() {
     const heroAbilities = this.props.abilities || [];
-    const abilities = heroAbilities.filter(filterOutAbilities);
+    const abilities = heroAbilities.filter(dropHeroSimpleAbilities);
     const key = `${this.props.id}-${this.props.level}-${this.props.hitpoints}`;
     return (
       <div
