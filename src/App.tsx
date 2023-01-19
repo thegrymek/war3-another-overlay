@@ -17,8 +17,8 @@ interface WebSocketEvent {
 }
 
 export interface AppState {
-  content: W3Event;
-  settings: unknown;
+  content?: W3Event;
+  settings?: unknown;
 }
 
 export class App extends React.Component<{}, AppState> {
@@ -29,9 +29,9 @@ export class App extends React.Component<{}, AppState> {
 
   componentDidMount() {
     // Uncomment to load fake data
-    // this.setState({content: event.content});
+    this.setState({content: event.content});
     // Comment out to not use connection in development
-    this.connect();
+    // this.connect();
   }
 
   connect() {

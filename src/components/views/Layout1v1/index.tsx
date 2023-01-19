@@ -1,6 +1,6 @@
 import React from 'react';
 import {W3HeroProps, W3PlayerProps} from '../../../w3/interfaces';
-import {uuid} from 'uuidv4';
+import {v4 as uuid} from 'uuid';
 
 import SideLayout from '../../atoms/SideLayout';
 import AbsoluteDiv from '../../atoms/AbsoluteDiv';
