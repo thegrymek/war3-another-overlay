@@ -1,12 +1,13 @@
-import {Story, Meta} from '@storybook/react/types-6-0';
-import NavbarResources, {NavbarResourcesProps} from '.';
+import React from 'react';
+import {ComponentStory, ComponentMeta} from '@storybook/react';
+import NavbarResources from '.';
 import {
   elfUpgrades,
   elfRangedUpgrades,
   elfMeleeUpgrades,
   elfCastersUpgrades,
-} from '../../fixtures';
-import {colors} from '../../Theme';
+} from '../../../fixtures';
+import {colors} from '../../../settings';
 
 export default {
   title: 'Organisms / Navbar Resources',
@@ -36,9 +37,9 @@ export default {
       },
     },
   },
-} as Meta;
+} as ComponentMeta<typeof NavbarResources>;
 
-const Template: Story<NavbarResourcesProps> = args => (
+const Template: ComponentStory<typeof NavbarResources> = args => (
   <NavbarResources {...args} />
 );
 

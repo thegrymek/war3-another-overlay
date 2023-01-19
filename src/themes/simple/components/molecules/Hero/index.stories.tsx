@@ -1,5 +1,6 @@
-import {Story, Meta} from '@storybook/react/types-6-0';
-import Hero, {HeroProps} from '.';
+import React from 'react';
+import {ComponentStory, ComponentMeta} from '@storybook/react';
+import Hero from '.';
 
 export default {
   title: 'Molecules / Hero',
@@ -15,9 +16,9 @@ export default {
       control: {type: 'number', min: 0, max: 10, step: 1},
     },
   },
-} as Meta;
+} as ComponentMeta<typeof Hero>;
 
-const Template: Story<HeroProps> = args => <Hero {...args} />;
+const Template: ComponentStory<typeof Hero> = args => <Hero {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

@@ -2,8 +2,7 @@
   "extends": "./node_modules/gts/",
   "overrides": [{
     "files": [
-      "src/stories/*.stories.tsx",
-      "src/components/**/*.stories.tsx",
+      "src/themes/simple/components/**/*.stories.tsx",
       "src/setupTests.ts"
     ],
     "rules": {

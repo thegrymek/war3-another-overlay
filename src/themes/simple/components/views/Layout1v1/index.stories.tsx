@@ -1,6 +1,7 @@
-import {Story, Meta} from '@storybook/react/types-6-0';
-import {event, event_start, event_mid, event_late} from '../../../fixtures';
-import {Layout1v1Replay, Layout1v1ReplayProps} from './index';
+import React from 'react';
+import {ComponentStory, ComponentMeta} from '@storybook/react';
+import {event_1, event_start, event_mid, event_late} from '../../../fixtures';
+import {Layout1v1Replay} from './index';
 
 export default {
   title: 'Views / Layout 1v1 Replay',
@@ -10,7 +11,7 @@ export default {
       control: {
         type: 'select',
         options: [
-          event.content.players,
+          event_1.content.players,
           event_start.content.players,
           event_mid.content.players,
           event_late.content.players,
@@ -18,15 +19,15 @@ export default {
       },
     },
   },
-} as Meta;
+} as ComponentMeta<typeof Layout1v1Replay>;
 
-const Template: Story<Layout1v1ReplayProps> = args => (
+const Template: ComponentStory<typeof Layout1v1Replay> = args => (
   <Layout1v1Replay {...args} />
 );
 
 const SimpleLayout1v1Replay = Template.bind({});
 SimpleLayout1v1Replay.args = {
-  players: event.players,
+  players: event_start.content.players,
 };
 
 export {SimpleLayout1v1Replay};

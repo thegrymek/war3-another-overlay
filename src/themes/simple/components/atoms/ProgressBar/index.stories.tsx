@@ -1,5 +1,6 @@
-import {Story, Meta} from '@storybook/react/types-6-0';
-import {StyledProgressBar, ProgressBarProps} from '.';
+import React from 'react';
+import {ComponentStory, ComponentMeta} from '@storybook/react';
+import {StyledProgressBar} from '.';
 
 export default {
   title: 'Atoms / ProgressBar',
@@ -20,9 +21,9 @@ export default {
       },
     },
   },
-} as Meta;
+} as ComponentMeta<typeof StyledProgressBar>;
 
-const Template: Story<ProgressBarProps> = args => (
+const Template: ComponentStory<typeof StyledProgressBar> = args => (
   <StyledProgressBar {...args} />
 );
 

@@ -1,5 +1,6 @@
-import {Story, Meta} from '@storybook/react/types-6-0';
-import Upgrade, {UpgradeProps} from '.';
+import React from 'react';
+import {ComponentStory, ComponentMeta} from '@storybook/react';
+import Upgrade from '.';
 
 export default {
   title: 'Molecules / Upgrade',
@@ -18,9 +19,9 @@ export default {
       control: {type: 'number', min: 1, max: 3, step: 1},
     },
   },
-} as Meta;
+} as ComponentMeta<typeof Upgrade>;
 
-const Template: Story<UpgradeProps> = args => <Upgrade {...args} />;
+const Template: ComponentStory<typeof Upgrade> = args => <Upgrade {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

@@ -1,5 +1,6 @@
-import {Story, Meta} from '@storybook/react/types-6-0';
-import HeroLayout, {HeroLayoutProps} from '.';
+import React from 'react';
+import {ComponentStory, ComponentMeta} from '@storybook/react';
+import HeroLayout from '.';
 import {
   twoItems,
   fourItems,
@@ -7,7 +8,7 @@ import {
   DeathKnightAbilities,
   DreadLordAbilities,
   LichAbilities,
-} from '../../fixtures';
+} from '../../../fixtures';
 
 export default {
   title: 'Organisms / Hero',
@@ -44,9 +45,11 @@ export default {
       control: {type: 'boolean'},
     },
   },
-} as Meta;
+} as ComponentMeta<typeof HeroLayout>;
 
-const Template: Story<HeroLayoutProps> = args => <HeroLayout {...args} />;
+const Template: ComponentStory<typeof HeroLayout> = args => (
+  <HeroLayout {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {

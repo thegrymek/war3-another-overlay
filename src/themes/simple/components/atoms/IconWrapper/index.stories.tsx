@@ -1,6 +1,6 @@
-import {Story, Meta} from '@storybook/react/types-6-0';
-
-import IconWrapper, {IconWrapperProps} from '.';
+import React from 'react';
+import {ComponentStory, ComponentMeta} from '@storybook/react';
+import IconWrapper from '.';
 
 export default {
   title: 'Atoms / IconWrapper',
@@ -25,9 +25,11 @@ export default {
       control: {type: 'boolean'},
     },
   },
-} as Meta;
+} as ComponentMeta<typeof IconWrapper>;
 
-const Template: Story<IconWrapperProps> = args => <IconWrapper {...args} />;
+const Template: ComponentStory<typeof IconWrapper> = args => (
+  <IconWrapper {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {

@@ -1,7 +1,8 @@
-import {Story, Meta} from '@storybook/react/types-6-0';
-import NavbarUnitsUpgrades, {NavBarUnitsUpgradesProps} from '.';
-import {elfUnits, elfUpgrades} from '../../fixtures';
-import {colors} from '../../Theme';
+import React from 'react';
+import {ComponentStory, ComponentMeta} from '@storybook/react';
+import NavbarUnitsUpgrades from '.';
+import {elfUnits, elfUpgrades} from '../../../fixtures';
+import {colors} from '../../../settings';
 
 export default {
   title: 'Organisms / Navbar Units Upgrades',
@@ -20,9 +21,9 @@ export default {
       },
     },
   },
-} as Meta;
+} as ComponentMeta<typeof NavbarUnitsUpgrades>;
 
-const Template: Story<NavBarUnitsUpgradesProps> = args => (
+const Template: ComponentStory<typeof NavbarUnitsUpgrades> = args => (
   <NavbarUnitsUpgrades {...args} />
 );
 

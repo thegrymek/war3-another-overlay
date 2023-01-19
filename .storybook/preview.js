@@ -4,7 +4,7 @@ import '../src/scss/tailwind.scss';
 
 import { addDecorator, addParameters } from '@storybook/react';
 import {withThemesProvider} from 'storybook-addon-styled-component-theme';
-import {theme} from '../src/components/Theme';
+import {theme} from '../src/themes/simple/settings';
 
 const themes = [theme];
 

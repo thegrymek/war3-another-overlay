@@ -1,5 +1,6 @@
-import {Story, Meta} from '@storybook/react/types-6-0';
-import SideLayout, {SideLayoutProps} from '.';
+import React from 'react';
+import {ComponentStory, ComponentMeta} from '@storybook/react';
+import SideLayout from '.';
 
 export default {
   title: 'Atoms / SideLayout',
@@ -28,9 +29,9 @@ export default {
       },
     },
   },
-} as Meta;
+} as ComponentMeta<typeof SideLayout>;
 
-const Template: Story<SideLayoutProps> = args => (
+const Template: ComponentStory<typeof SideLayout> = args => (
   <SideLayout {...args}>Some content</SideLayout>
 );
 
