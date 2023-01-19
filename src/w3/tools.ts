@@ -5,8 +5,8 @@ import {
   W3AbilityProps,
   W3PlayerProps,
 } from './interfaces';
-import { HERO_SIMPLE_ABILITIES, ITEM_EMPTY_ICON } from './constants';
-import { INumberedDictType } from './types'
+import {HERO_SIMPLE_ABILITIES, ITEM_EMPTY_ICON} from './constants';
+import {INumberedDictType} from './types';
 
 export function dropHeroSimpleAbilities(ability: W3AbilityProps): boolean {
   if (HERO_SIMPLE_ABILITIES.includes(ability.id)) return false;
@@ -55,7 +55,6 @@ export function countTotalWorkers(unitsOnMap: W3UnitProps[]): number {
     .map((unit: W3UnitProps) => unit['total_count'])
     .reduce((accumulator: number, value: number) => accumulator + value, 0);
 }
-
 
 /** Slots numbering from w3.
  *
