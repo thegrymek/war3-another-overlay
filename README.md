@@ -53,7 +53,7 @@ war3-another-overlay/public/assets/icons
 ## Installation
 
 ```bash
-$ npm install
+$ yarn install
 ```
 
 To run overlay in browser run in order:
@@ -64,13 +64,13 @@ To run overlay in browser run in order:
 You are ready to go!
 
 ```bash
-$ npm run start
+$ yarn start
 ```
 
 Try out also storybook!
 
 ```
-$ npm run storybook
+$ yarn storybook
 ```
 
 it should open new tab in your browser. There you can test components
@@ -82,19 +82,19 @@ separately using some fake data.
 In order to run linters:
 
 ```
-$ npm run lint
+$ yarn lint
 ```
 
 In order to run automatic fix lint:
 
 ```
-$ npm run fix
+$ yarn fix
 ```
 
 If you have missing `tailwind.css` file run:
 
 ```
-$ npm run build
+$ yarn build
 ```
 
 # Contribute

@@ -44,9 +44,7 @@ export interface NavBarUnitsUpgradesProps
   extends NavbarUnitsUpgradesConfigProps,
     UnitsUpgradesProps {}
 
-export default class NavbarUnitsUpgrades extends React.Component<
-  NavBarUnitsUpgradesProps
-> {
+export default class NavbarUnitsUpgrades extends React.Component<NavBarUnitsUpgradesProps> {
   public static defaultProps = {
     showUnits: true,
     showUpgrades: true,

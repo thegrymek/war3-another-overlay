@@ -5,6 +5,9 @@ import {sortPlayers, checkPlayers, isPlayerPlaying} from './w3/tools';
 import {theme} from './components/Theme';
 import {ThemeProvider} from 'styled-components';
 
+// Uncomment for test and develop purposes
+import event from './events/event_late_game.json';
+
 interface Event {
   content: W3Event;
   type: string;
@@ -25,6 +28,9 @@ export class App extends React.Component<{}, AppState> {
   };
 
   componentDidMount() {
+    // Uncomment to load fake data
+    // this.setState({content: event.content});
+    // Comment out to not use connection in development
     this.connect();
   }
 

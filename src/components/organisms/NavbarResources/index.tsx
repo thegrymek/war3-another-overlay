@@ -33,9 +33,7 @@ export interface NavbarResourcesProps
   extends W3PlayerProps,
     NavbarResourceConfigProps {}
 
-export default class NavbarResources extends React.Component<
-  NavbarResourcesProps
-> {
+export default class NavbarResources extends React.Component<NavbarResourcesProps> {
   public static defaultProps = {
     showArmyFood: true,
     showWorkersFood: true,
