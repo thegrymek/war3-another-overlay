@@ -1,12 +1,16 @@
 import React from 'react';
-import {Layout1v1, Layout1v1Replay} from './components/views/Layout1v1';
+import {
+  Layout1v1,
+  Layout1v1Replay,
+} from './themes/simple/components/views/Layout1v1';
 import {W3Event, W3PlayerProps} from './w3/interfaces';
 import {sortPlayers, checkPlayers, isPlayerPlaying} from './w3/tools';
-import {theme} from './components/Theme';
+import {theme} from './themes/simple/settings';
 import {ThemeProvider} from 'styled-components';
 
 // Uncomment for test and develop purposes
-import event from './events/event_late_game.json';
+// import event from './events/event_1.json';
+// import event from './events/event_1v1_late_game.json';
 
 interface Event {
   content: W3Event;
@@ -29,9 +33,9 @@ export class App extends React.Component<{}, AppState> {
 
   componentDidMount() {
     // Uncomment to load fake data
-    this.setState({content: event.content});
+    // this.setState({content: event.content});
     // Comment out to not use connection in development
-    // this.connect();
+    this.connect();
   }
 
   connect() {
