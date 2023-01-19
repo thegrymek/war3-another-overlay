@@ -5,7 +5,9 @@ import tw from 'twin.macro';
 import IconWrapper from '../../atoms/IconWrapper';
 import Text from '../../atoms/Text';
 import {W3AbilityProps} from '../../../w3/interfaces';
+import {isOnColddown, getColddown} from '../../../w3/tools';
 import {colors} from '../../Theme';
+import {v4 as uuid} from 'uuid';
 
 const FixedDiv = styled.div`
   ${props =>
@@ -34,29 +36,38 @@ const LevelBar = styled.div`
   ${tw`w-full h-full border rounded-sm`}
 `;
 
+const levelBarColorMap: {[key: number]: string} = {
+  1: 'emerald',
+  2: 'yellow',
+  3: 'red',
+};
+const levelBarDefaultColor = 'emerald';
+
 export type AbilityProps = W3AbilityProps;
 export default class Ability extends React.Component<AbilityProps> {
   get isCooldown(): boolean {
-    return this.props.cooldown && this.props.cooldown > 0;
+    return isOnColddown(this.props);
+  }
+
+  get levelBarColor(): string {
+    const level = this.props.level;
+    if (!level) return levelBarDefaultColor;
+    if (level in levelBarColorMap) return levelBarColorMap[level];
+    return levelBarDefaultColor;
+  }
+
+  get levelsIndex(): number[] {
+    return [2, 1, 0];
   }
 
   renderCooldown() {
     return (
       <div className="absolute flex w-full h-full">
         <TextCooldown className="m-auto text-center">
-          {Math.floor(this.props.cooldown)}
+          {getColddown(this.props)}
         </TextCooldown>
       </div>
     );
-  }
-
-  get levelBarColor(): string {
-    return {
-      undefined: 'emerald',
-      1: 'emerald',
-      2: 'yellow',
-      3: 'red',
-    }[this.props.level];
   }
 
   renderLevelBar(index: number) {
@@ -79,23 +90,18 @@ export default class Ability extends React.Component<AbilityProps> {
     return <LevelBar className={classNames.join(' ')} />;
   }
 
-  get key(): string {
-    return `${this.props.id}-${this.isCooldown}`;
-  }
-
   render() {
-    const levelsIndex = [2, 1, 0];
     return (
-      <FixedDiv className="flex flex-rows">
+      <FixedDiv className="flex flex-rows" key={uuid()}>
         <AbilityIcon
           id={this.props.id}
-          key={this.key}
-          grayScale={this.isCooldown && 80}
+          key={uuid()}
+          grayScale={this.isCooldown ? 80 : undefined}
         >
           {this.isCooldown ? this.renderCooldown() : null}
         </AbilityIcon>
-        <LevelBars className="grid grid-rows-3">
-          {levelsIndex.map(index => this.renderLevelBar(index))}
+        <LevelBars className="grid grid-rows-3" key={uuid()}>
+          {this.levelsIndex.map(index => this.renderLevelBar(index))}
         </LevelBars>
       </FixedDiv>
     );

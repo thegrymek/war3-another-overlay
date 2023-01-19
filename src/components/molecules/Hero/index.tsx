@@ -47,7 +47,7 @@ export default class Hero extends React.Component<HeroProps> {
       <HeroIcon
         id={this.props.id}
         key={this.key}
-        grayScale={this.props.isDead && 100}
+        grayScale={this.props.isDead ? 100 : undefined}
       >
         {this.renderLevel()}
       </HeroIcon>

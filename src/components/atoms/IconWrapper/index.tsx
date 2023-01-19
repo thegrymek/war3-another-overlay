@@ -15,5 +15,8 @@ export default styled.div<IconWrapperProps>`
   ${props => props.width && `width: ${props.width}px;`}
   ${props => props.height && `height: ${props.height}px;`}
   ${props => props.contained && tw`bg-contain`}
-  ${props => props.grayScale > 0 && `filter: grayscale(${props.grayScale}%);`}
+  ${props =>
+    props.grayScale && props.grayScale > 0
+      ? `filter: grayscale(${props.grayScale}%);`
+      : undefined}
 `;

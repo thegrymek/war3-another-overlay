@@ -8,12 +8,42 @@ import {
 import {HERO_SIMPLE_ABILITIES, ITEM_EMPTY_ICON} from './constants';
 import {INumberedDictType} from './types';
 
+//
+// Abilities
+//
+
+// Function that returns:
+// * false: if ability is like: move, attack, hold
+// * true: if ability is unique on hero
 export function dropHeroSimpleAbilities(ability: W3AbilityProps): boolean {
   if (HERO_SIMPLE_ABILITIES.includes(ability.id)) return false;
   if (!ability.id.match(/^A[HOEUN]/)) return false;
   return true;
 }
 
+// Return `true` if item/ability is on coldown
+// If item/ability does not have colddown returns `false`
+export function isOnColddown(
+  itemOrAbility: W3AbilityProps | W3ItemProps
+): boolean {
+  if (!itemOrAbility.cooldown) return false;
+  if (itemOrAbility.cooldown > 0) return true;
+  return false;
+}
+
+// Returns coldown rounded to 0 decimals
+// If colddown is not defined - return empty string
+export function getColddown(
+  itemOrAbility: W3AbilityProps | W3ItemProps
+): number | undefined {
+  if (itemOrAbility.cooldown === undefined) return undefined;
+  if (!isOnColddown(itemOrAbility)) return 0;
+  return Math.floor(itemOrAbility.cooldown);
+}
+
+//
+// Upgrades
+//
 export function getMelleUpgrades(upgrades: W3UpgradeProps[]): W3UpgradeProps[] {
   return upgrades.filter(upgrade => upgrade.class === 'MELEE');
 }

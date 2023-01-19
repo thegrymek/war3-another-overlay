@@ -2,6 +2,7 @@ import React from 'react';
 import Ability from '../Ability';
 import {W3AbilityProps} from '../../../w3/interfaces';
 import styled from 'styled-components';
+import {v4 as uuid} from 'uuid';
 
 const FixedDiv = styled.div`
   ${props =>
@@ -16,20 +17,19 @@ export interface AbilitiesProps {
 }
 export default class Abilities extends React.Component<AbilitiesProps> {
   renderAbility(ability: W3AbilityProps) {
-    const key = `${ability.id}-${ability.level}-${ability.cooldown}`;
     return (
       <Ability
         id={ability.id}
-        key={key}
         level={ability.level}
         cooldown={ability.cooldown}
+        key={uuid()}
       />
     );
   }
 
   render() {
     return (
-      <FixedDiv className="flex grid grid-cols-2">
+      <FixedDiv className="flex grid grid-cols-2" key={uuid()}>
         {this.props.abilities
           .slice()
           .reverse()
